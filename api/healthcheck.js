@@ -1,3 +1,4 @@
-export default async function handler(req, res) {
-  return res.status(200).json({ ok: true, runtime: "nodejs20.x", ts: Date.now() });
-}
+// CommonJS para evitar líos de ESM
+module.exports = (req, res) => {
+  res.status(200).json({ ok: true, note: "serverless up", ts: Date.now() });
+};
